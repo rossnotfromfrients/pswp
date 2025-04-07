@@ -16,7 +16,7 @@ int ft_lstsize(t_stack  *lst)
     i = 0;
     while (lst)
     {
-        lst = lst->next
+        lst = lst->next;
         i++;
     }
     return (i);
@@ -31,7 +31,7 @@ int ft_minnbr(t_stack *a)
     {
         if (a->nbr < i)
             i = a->nbr;
-        a = a->nbr;
+        a = a->next;
     }
     return (i);
 }
@@ -45,7 +45,7 @@ int ft_maxnbr(t_stack *a)
     {
         if (a->nbr > i)
             i = a->nbr;
-        a = a->nbr;
+        a = a->next;
     }
     return (i);
 }

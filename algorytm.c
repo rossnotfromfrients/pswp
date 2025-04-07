@@ -54,7 +54,7 @@ t_stack	*ft_sub_process(char **argv)
 	while (tmp[i])
 	{
 		j = ft_new_atoi(tmp[i]);
-		ft_add_back(&a, ft_stack_new(j));
+		ft_add_back(&a, ft_new_stack(j));
 		i++;
 	}
 	ft_freestr(tmp);

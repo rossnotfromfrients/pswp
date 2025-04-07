@@ -30,7 +30,7 @@ typedef struct s_stack
 
 void		list_args(char **argv, t_stack **stack_a);
 void		ft_add_back(t_stack **stack, t_stack *stack_new);
-t_stack		*ft_stack_new(int content);
+t_stack		*ft_new_stack(int digit);
 int			check_args(char **argv);
 void		alpha_check(char **argv);
 int			check_error(char **argv, int i, int j);
@@ -62,7 +62,7 @@ int			ft_find_place_a(t_stack *a, int nbr_push);
 void		ft_sort(t_stack **stack_a);
 int			ft_checksort(t_stack *stack_a);
 void		ft_sort_big(t_stack **stack_a);
-void		ft_sort_three(t_stack **stack_a);
+void		ft_sort_if_3(t_stack **stack_a);
 t_stack		*ft_parse(int argc, char **argv);
 t_stack		*ft_parse_args_quoted(char **argv);
 void		ft_freestr(char **lst);
