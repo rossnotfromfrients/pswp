@@ -25,7 +25,7 @@ int	ft_case_rrarrb(t_stack *a, t_stack *b, int c)
 
 	i = 0;
 	if (ft_find_place_b(b, c))
-		i = ps_lstlast(b) - ft_find_place_b(b, c);
+		i = ps_lstsize(b) - ft_find_place_b(b, c);
 	if ((i < (ps_lstsize(a) - ft_find_index(a, c))) && ft_find_index(a, c))
 		i = ps_lstsize(a) - ft_find_index(a, c);
 	return (i);

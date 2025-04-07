@@ -61,6 +61,7 @@ void		ft_sort(t_stack **stack_a);
 int			ft_checksorted(t_stack *stack_a);
 void		ft_sort_big(t_stack **stack_a);
 void		ft_sort_if_3(t_stack **stack_a);
+int			get_node_distance(t_stack *from, t_stack *to);
 t_stack		*ft_parse(int argc, char **argv);
 t_stack		*ft_parse_args_quoted(char **argv);
 void		ft_freestr(char **lst);

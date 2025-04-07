@@ -4,6 +4,7 @@ int ft_find_index(t_stack *a, int nbr)
 {
     int i;
 
+	i = 0;
     while (a)
     {
         if (a->nbr == nbr )
