@@ -2,7 +2,7 @@
 
 void    ft_freestr(char **lst)
 {
-    char    *b
+    char    *b;
 
     if (!lst)
         return ;

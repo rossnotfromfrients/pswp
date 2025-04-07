@@ -7,7 +7,7 @@ void ft_ra(t_stack **a, int j)
     if (!a || !(*a)->next)
         return;
     tmp = *a;
-    *a = ft_lstlast(*a);
+    *a = ps_lstlast(*a);
     (*a)->next = tmp;
     *a = tmp->next;
     tmp->next = NULL;

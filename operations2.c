@@ -47,12 +47,12 @@ void	ft_rr(t_stack **a, t_stack **b, int j)
 	if (!*a || !((*a)->next) || !*b || !((*b)->next))
 		return ;
 	tmp = *a;
-	*a = ft_lstlast(*a);
+	*a = ps_lstlast(*a);
 	(*a)->next = tmp;
 	*a = tmp->next;
 	tmp->next = NULL;
 	tmp = *b;
-	*b = ft_lstlast(*b);
+	*b = ps_lstlast(*b);
 	(*b)->next = tmp;
 	*b = tmp->next;
 	tmp->next = NULL;

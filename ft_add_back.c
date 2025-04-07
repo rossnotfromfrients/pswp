@@ -19,5 +19,5 @@ void ft_add_back(t_stack **stack, t_stack *stack_new)
     if (!*stack)
         *stack = stack_new;
     else
-        (ft_lstlact(*stack))-> = stack_new;
+        (ps_lstlast(*stack))->next = stack_new;
 }

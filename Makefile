@@ -16,25 +16,20 @@ SRC = \
 	ft_add_back.c \
 	ft_checkdup.c \
 	ft_check_args.c \
-	ft_check_sorted_check.c \
-	ft_error.c \
 	ft_free.c \
-	ft_list_args.c \
+	list_args.c \
 	ft_mainsort.c \
 	ft_new_stack.c \
-	ft_parse.c \
 	ft_parse_args_quoted.c \
 	ft_rotate_and_push.c \
 	ft_rotate_grand.c \
-	ft_rotate_type.c \
 	ft_sort_if_3.c \
 	ft_sorted_check.c \
-	ft_stackplace_utils.c \
 	operations.c \
-	operations_2.c \
-	operations_3.c \
-	podsched_oper_ab.c \
-	podsched_oper_ba.c \
+	operations2.c \
+	operations3.c \
+	podschet_oper_ab.c \
+	podschet_oper_ba.c \
 	print_error.c \
 	push_swap.c \
 	stackplace_utils.c \
