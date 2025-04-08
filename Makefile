@@ -32,6 +32,7 @@ SRC = \
 	podschet_oper_ba.c \
 	print_error.c \
 	push_swap.c \
+	check_utils.c \
 	stackplace_utils.c \
 	utils_last.c
 
