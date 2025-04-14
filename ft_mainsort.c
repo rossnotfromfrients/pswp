@@ -12,22 +12,23 @@
 
 #include "push_swap.h"
 
-// This function sort and push stacks until 3 members left behind.
+// Sorts and pushes elements from stack_a to stack_b
+// until only 3 elements remain in stack_a.
 void	ft_sort_b_till_3(t_stack **stack_a, t_stack **stack_b)
 {
 	int		i;
 	t_stack	*tmp;
-	int	safety;
+	int		safety;
 
 	while (ps_lstsize(*stack_a) > 3 && !ft_checksorted(*stack_a))
 	{
 		tmp = *stack_a;
-		safety = ps_lstsize(*stack_a) *10;
+		safety = ps_lstsize(*stack_a) * 10;
 		i = ft_rotate_type_ab(*stack_a, *stack_b);
 		while (i >= 0 && safety--)
 		{
 			if (!tmp)
-				break;
+				break ;
 			if (i == ft_case_rarb(*stack_a, *stack_b, tmp->nbr))
 				i = ft_apply_rarb(stack_a, stack_b, tmp->nbr, 'a');
 			else if (i == ft_case_rrarrb(*stack_a, *stack_b, tmp->nbr))
@@ -42,12 +43,9 @@ void	ft_sort_b_till_3(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-// This function one by one pushes all the elements
-// in stack_a to the stack_b, until only three elements
-// are left in stack_a. While pushing, it makes sure if
-// the stack_b is sorted. When three elements are left,
-// it calls the ft_sort_three function to sort left over
-// elements in stack_a.
+// Pushes elements from stack_a to stack_b while
+// more than 3 elements remain in stack_a.
+// Once only 3 elements remain, it sorts them directly.
 t_stack	*ft_sort_b(t_stack **stack_a)
 {
 	t_stack	*stack_b;
@@ -64,8 +62,8 @@ t_stack	*ft_sort_b(t_stack **stack_a)
 	return (stack_b);
 }
 
-// This function is pushing back the elements from stack_b
-// to stack_a until stack_b is empty. 
+// Pushes all elements from stack_b back into stack_a
+// in the correct order.
 t_stack	**ft_sort_a(t_stack **stack_a, t_stack **stack_b)
 {
 	int		i;
@@ -92,14 +90,9 @@ t_stack	**ft_sort_a(t_stack **stack_a, t_stack **stack_b)
 	return (stack_a);
 }
 
-// This function sorts the stack_a if there are more 
-// than 2 elements in the stack_a.
-// And finally it makes final sort in stack_a after
-// all values pushed to stack_b, sorted and pushed
-// back to stack_a. Because, even the stack_a is
-// sorted at the end, the minimum number have to 
-// at the top of the stack_a. So, it simply brings
-// the smallest number of the stack_a to the top.
+// Handles full sorting process: splitting into stack_b,
+// sorting, and rotating final stack_a to have the
+// smallest value on top.
 void	ft_sort(t_stack **stack_a)
 {
 	t_stack	*stack_b;
@@ -122,6 +115,6 @@ void	ft_sort(t_stack **stack_a)
 		{
 			while ((*stack_a)->nbr != ft_minnbr(*stack_a))
 				ft_rra(stack_a, 0);
-		}			
-	}	
+		}
+	}
 }

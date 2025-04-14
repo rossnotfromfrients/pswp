@@ -10,10 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include  "push_swap.h"
+#include "push_swap.h"
 
-void ft_error(void)
+// Print error message and exit the program
+void	ft_error(void)
 {
-    write(2, "error\n", 6);
-    exit(1);
+	write(2, "error\n", 6);
+	exit(1);
 }

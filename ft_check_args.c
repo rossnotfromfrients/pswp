@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-// Проверка, является ли символ недопустимым (всё, кроме цифр, +, - и пробелов)
+// Check if character is invalid (anything except digits, +, - and spaces)
 static int	is_invalid_char(char c)
 {
 	if ((c >= '0' && c <= '9') || c == '-' || c == '+')
@@ -20,7 +20,7 @@ static int	is_invalid_char(char c)
 	return (1);
 }
 
-// Проверка всех символов аргументов
+// Check all characters in input arguments
 static void	alpha_check(char **argv)
 {
 	int	i;
@@ -40,7 +40,7 @@ static void	alpha_check(char **argv)
 	}
 }
 
-// Основная проверка аргументов
+// Main argument check
 int	check_args(char **argv)
 {
 	alpha_check(argv);

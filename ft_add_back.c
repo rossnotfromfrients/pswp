@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
 void	ft_add_back(t_stack **stack, t_stack *new_node)
 {
 	t_stack	*last;

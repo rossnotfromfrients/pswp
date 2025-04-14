@@ -12,21 +12,22 @@
 
 #include "push_swap.h"
 
-void    ft_pb(t_stack **a, t_stack **b, int  j)
+// Push the top element from stack A to stack B
+void	ft_pb(t_stack **a, t_stack **b, int j)
 {
-    t_stack *tmp;
+	t_stack	*tmp;
 
-    if (!*a)
-        return ;
-    
-    tmp = *b;
-    *b = *a;
-    *a = (*a)->next;
-    (*b)->next = tmp;
-    if (j == 0)
+	if (!*a)
+		return ;
+	tmp = *b;
+	*b = *a;
+	*a = (*a)->next;
+	(*b)->next = tmp;
+	if (j == 0)
 		write(1, "pb\n", 3);
 }
 
+// Reverse rotate stack B (last element becomes first)
 void	ft_rrb(t_stack **b, int j)
 {
 	t_stack	*tmp;
@@ -52,6 +53,7 @@ void	ft_rrb(t_stack **b, int j)
 		write(1, "rrb\n", 4);
 }
 
+// Rotate both stack A and stack B
 void	ft_rr(t_stack **a, t_stack **b, int j)
 {
 	t_stack	*tmp;
@@ -72,6 +74,7 @@ void	ft_rr(t_stack **a, t_stack **b, int j)
 		write(1, "rr\n", 3);
 }
 
+// Reverse rotate both stack A and stack B
 void	ft_rrr(t_stack **a, t_stack **b, int j)
 {
 	t_stack	*tmp;
@@ -96,6 +99,7 @@ void	ft_rrr(t_stack **a, t_stack **b, int j)
 	ft_rrr_sub(b, j);
 }
 
+// Helper: reverse rotate stack B (used in ft_rrr)
 void	ft_rrr_sub(t_stack **b, int j)
 {
 	t_stack	*tmp;
