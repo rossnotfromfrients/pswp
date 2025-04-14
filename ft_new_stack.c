@@ -12,14 +12,14 @@
 
 #include "push_swap.h"
 
-t_stack *ft_new_stack(int digit)
+t_stack	*ft_new_stack(int digit)
 {
-    t_stack *new;
+	t_stack	*new;
 
-    new = malloc(sizeof (t_stack));
-    if (!new)
-        ft_error();
-    new->nbr = digit;
-    new->next = NULL;
-    return (new);
+	new = malloc(sizeof(t_stack));
+	if (!new)
+		ft_error();
+	new->nbr = digit;
+	new->next = NULL;
+	return (new);
 }

@@ -29,7 +29,7 @@ typedef struct s_stack
 }	t_stack;
 
 void		list_args(char **argv, t_stack **stack_a);
-void		ft_add_back(t_stack **stack, t_stack *stack_new);
+void		ft_add_back(t_stack **stack, t_stack *new_node);
 t_stack		*ft_new_stack(int digit);
 int			check_args(char **argv);
 int			check_error(char **argv, int i, int j);

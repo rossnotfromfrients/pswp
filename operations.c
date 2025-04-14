@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   operations.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rodolhop <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/08 17:22:09 by rodolhop          #+#    #+#             */
+/*   Updated: 2025/04/08 17:22:11 by rodolhop         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void ft_ra(t_stack **a, int j)
@@ -23,7 +35,7 @@ void ft_sa(t_stack **a, int j)
         return;
     tmp = *a;
     *a = (*a)->next;
-    tmp->next = tmp->next;
+    tmp->next = (*a)->next;
     (*a)->next = tmp;
     if (j == 0)
         write(1, "sa\n", 3);
@@ -35,10 +47,10 @@ void ft_pa(t_stack **a, t_stack **b, int j)
 
     if (!*b)
         return;
-    tmp = *a;
-    *b = *a;
+    tmp = *b;
     *b = (*b)->next;
-    (*a)->next = tmp;
+    tmp->next = *a;
+    *a = tmp;
     if (j == 0)
         write(1, "pa\n", 3);
 }

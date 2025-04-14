@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_utils.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rodolhop <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/08 17:11:28 by rodolhop          #+#    #+#             */
+/*   Updated: 2025/04/08 17:11:34 by rodolhop         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-int sign(int c)
+int	sign(int c)
 {
-    if (c == '+' || c == '-')
-        return (1);
-    return (0);
+	if (c == '+' || c == '-')
+		return (1);
+	return (0);
 }
 
 int	digit(int d)
@@ -21,14 +33,14 @@ int	space(int s)
 	return (0);
 }
 
-int check_error(char **argv, int i, int j)
+int	check_error(char **argv, int i, int j)
 {
-    while (argv[i])
-    {
-        j = 0;
-        while (argv[i][j] != '\0')
-        {
-            if (sign(argv[i][j]))
+	while (argv[i])
+	{
+		j = 0;
+		while (argv[i][j] != '\0')
+		{
+			if (sign(argv[i][j]))
 			{
 				j++;
 				if (!digit(argv[i][j]))
@@ -43,8 +55,8 @@ int check_error(char **argv, int i, int j)
 					return (0);
 			}
 			j++;
-        }
-        i++;
-    }
-    return (1);
+		}
+		i++;
+	}
+	return (1);
 }

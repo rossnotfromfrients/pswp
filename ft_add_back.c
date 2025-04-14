@@ -10,14 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-void ft_add_back(t_stack **stack, t_stack *stack_new)
+void	ft_add_back(t_stack **stack, t_stack *new_node)
 {
-    if(!stack)
-        return ;
-    if (!*stack)
-        *stack = stack_new;
-    else
-        (ps_lstlast(*stack))->next = stack_new;
+	t_stack	*last;
+
+	if (!stack || !new_node)
+		return ;
+	if (!*stack)
+		*stack = new_node;
+	else
+	{
+		last = ps_lstlast(*stack);
+		last->next = new_node;
+	}
 }

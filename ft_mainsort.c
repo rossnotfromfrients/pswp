@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_mainsort.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rodolhop <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/08 17:12:52 by rodolhop          #+#    #+#             */
+/*   Updated: 2025/04/08 17:12:54 by rodolhop         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 // This function sort and push stacks until 3 members left behind.
@@ -5,13 +17,17 @@ void	ft_sort_b_till_3(t_stack **stack_a, t_stack **stack_b)
 {
 	int		i;
 	t_stack	*tmp;
+	int	safety;
 
 	while (ps_lstsize(*stack_a) > 3 && !ft_checksorted(*stack_a))
 	{
 		tmp = *stack_a;
+		safety = ps_lstsize(*stack_a) *10;
 		i = ft_rotate_type_ab(*stack_a, *stack_b);
-		while (i >= 0)
+		while (i >= 0 && safety--)
 		{
+			if (!tmp)
+				break;
 			if (i == ft_case_rarb(*stack_a, *stack_b, tmp->nbr))
 				i = ft_apply_rarb(stack_a, stack_b, tmp->nbr, 'a');
 			else if (i == ft_case_rrarrb(*stack_a, *stack_b, tmp->nbr))

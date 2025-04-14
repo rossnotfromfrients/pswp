@@ -14,13 +14,13 @@
 
 int	ft_new_atoi(const char *str)
 {
-	int			mod;
+	int				mod;
 	long long int	i;
 
 	i = 0;
 	mod = 1;
-	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\f'
-		|| *str == '\v' || *str == '\r')
+	while (*str == ' ' || *str == '\t' || *str == '\n'
+		|| *str == '\f' || *str == '\v' || *str == '\r')
 		str++;
 	if (*str == '-')
 	{
@@ -33,7 +33,7 @@ int	ft_new_atoi(const char *str)
 	{
 		if (!ft_isdigit(*str))
 			ft_error();
-		i = i * 10 + (*str - 48);
+		i = i * 10 + (*str - '0');
 		str++;
 	}
 	if ((mod * i) > 2147483647 || (mod * i) < -2147483648)
@@ -50,7 +50,7 @@ t_stack	*ft_sub_process(char **argv)
 
 	a = NULL;
 	i = 0;
-	tmp = ft_split(argv[1], 32);
+	tmp = ft_split(argv[1], ' ');
 	while (tmp[i])
 	{
 		j = ft_new_atoi(tmp[i]);
